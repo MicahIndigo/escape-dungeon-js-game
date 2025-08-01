@@ -1,0 +1,28 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* CSS Variables */
+
+:root {
+    --heading-font: "Space Mono", monospace;
+    --game-font: "Bitcount Prop Single", sans-serif;
+    --background-color: #eae6e5; /* Platinum */
+}
+
+/* Global Styles */
+
+#heading-font {
+    font-family: var(--heading-font);
+}
+
+body {
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+body > h1 {
+    font-size: 4rem;
+    text-align: center;
+}

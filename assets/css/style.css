@@ -47,3 +47,9 @@ body > h1 {
   #escapeDungeonContainer {
     display: none;
   }
+
+  .error {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+  }

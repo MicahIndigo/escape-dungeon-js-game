@@ -19,6 +19,8 @@ startButton.addEventListener("click", () => {
 function showStory(storyKey) {
   try {
     const story = storyData[storyKey];
+
+    // If the story key does not exist, throw an error.
     if (!story) {
         throw new Error(`Story key "${storyKey}" not found in storyData.`);
     }
@@ -26,18 +28,18 @@ function showStory(storyKey) {
     /* show the story text */
     storyText.innerHTML = story.text;
 
-    /* clear options buttons */
+    /* clear previous options and puzzle content. */
     optionsContainer.innerHTML = "";
-
-    /* clear puzzle game container */
     puzzleContainer.innerHTML = "";
 
-    /* Displays each story option as a button */
+    /* Creates button for each story option */
     story.options.forEach(option => {
       const button = document.createElement("button");
       button.textContent = option.text;
+
+      /*When option is clicked, go the next story step */
       button.addEventListener("click", () => {
-        showStory(option.next); /* Moves story to the next step */
+        showStory(option.next);
       });
       optionsContainer.appendChild(button);
     });
@@ -48,7 +50,35 @@ function showStory(storyKey) {
     }
 
   } catch (error) {
+    // If an error occurs, display an error message in the story text.
     storyText.textContent = "Oops! Something went wrong in the story.";
-    console.error(error);
+    console.error(error); // Log the error to the console for debugging.
+  }
+}
+
+/* Function to launch the puzzle game */
+function launchPuzzle(puzzleType) {
+  try {
+    switch (puzzleType) {
+      case "hangman":
+        startHangman(); /* Starts the Hangman game hangman.js */
+        break;
+      case "memory":
+        startMemory(); /* Starts the Memory game memory.js */
+        break;
+      case "rps":
+        startRPS(); /* Starts the Rock-Paper-Scissors game rps.js */
+        break;
+      case "scramble":
+        startScramble(); /* Starts the Scramble game scramble.js */
+        break;
+      default:
+        // If the puzzle type is not recognized, throw an error.
+        throw new Error(`Unknown puzzle type: "${puzzleType}"`);
+    }
+  } catch (error) {
+    // If an error occurs, displays an error message in the puzzle container.
+    puzzleContainer.innerHTML = `<p class="error">Puzzle failed to load.</p>`;
+    console.error(error); // Log the error to the console for debugging.
   }
 }

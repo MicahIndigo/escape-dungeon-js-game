@@ -7,13 +7,21 @@
 :root {
     --heading-font: "Space Mono", monospace;
     --game-font: "Bitcount Prop Single", sans-serif;
-    --background-color: #eae6e5; /* Platinum */
+    --background-color: #1b1b1f; /* Dungeon dark gray */
+    --text-color: #f4f1ed;       /* Pale Parchment */
+    --accent-color: #e63946;     /* Blood red - errors, failure messages */
+    --highlight-color: #f1c40f;  /* Gold - Buttons highlight, Lives counter */
+    --container-bg: #2b2b30;     /* lighter dark gray - for containers */
+    --button-bg: #3d3d44;        /* stone gray - default button background */
+    --button-hover: #575761;     /* light gray - button hover effect */
+    --border-color: #888;         /* Mid gray */
 }
 
 /* Global Styles */
 
 #heading-font {
     font-family: var(--heading-font);
+    color: var(--text-color);
 }
 
 body {

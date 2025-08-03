@@ -190,4 +190,21 @@ function setStatus(message) {
     document.getElementById('hangmanStatus').textContent = message;
 }
 
-/* Checks the game state to determine win/loss */
+/* Checks the game state to determine win/loss and end puzzle */
+function checkGameState() {
+    const isComplete = selectedWord.split('').every(letter => guessedLetters.includes(letter));
+
+    if (isComplete) {
+        setStatus('Congratulations! You escaped this trap!');
+        setTimeout(() => puzzleResult(true), 1500);
+    } else if (mistakes >= maxMistakes) {
+        setStatus('You failed to solve the puzzle.');
+        setTimeout(() => puzzleResult(false), 1500);
+    }
+}
+
+/* Sends result back to story logic */
+function puzzleResult(success) {
+    puzzleGameContainer.innerHTML = '';
+    handlePuzzleResult('hangman', success);
+}

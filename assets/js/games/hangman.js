@@ -14,13 +14,16 @@ let hintUsed = false; // Flag to check if hint has been used
 const puzzleGameContainer = document.getElementById("puzzleGameContainer");
 
 /* Function to start the Hangman game called in story.js */
-function startHangmanPuzzle(callback) {
+function startHangman(onSuccess, onFail) {
+    // Store the callbacks so puzzleResult can use them later
+    window.hangmanOnSuccess = onSuccess;
+    window.hangmanOnFail = onFail;
+  
     resetHangmanState();
     selectedWord = pickRandomWord();
     renderHangmanUI();
     updateWordDisplay();
-    if (callback) callback('hangman');
-}
+  }
 
 /* Randomly picks a word from the hangmanWords array */
 function pickRandomWord() {
@@ -206,5 +209,10 @@ function checkGameState() {
 /* Sends result back to story logic */
 function puzzleResult(success) {
     puzzleGameContainer.innerHTML = '';
-    handlePuzzleResult('hangman', success);
+
+    if (success && typeof window.hangmanOnSuccess === 'function') {
+        window.hangmanOnSuccess();
+    } else if (!success && typeof window.hangmanOnFail === 'function') {
+        window.hangmanOnFail();
+    }
 }

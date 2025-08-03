@@ -94,3 +94,93 @@ function handleGuess() {
     updateHangmanVisual();
     checkGameState();
 }
+
+/* Function to show a hint */
+function showHint() {
+    if (hintUsed) {
+        setStatus('You have already used your hint.');
+        return;
+    }
+
+    const unguessed = selectedWord.split('').filter(l => !guessedLetters.includes(l));
+    if (unguessed.length > 0) {
+        const hintLetter = unguessed[Math.floor(Math.random() * unguessed.length)];
+        guessedLetters.push(hintLetter);
+        hintUsed = true;
+        setStatus(`Hint Revealed: ${hintLetter}`);
+        updateWordDisplay();
+        updateHangmanVisual();
+        checkGameState();
+    }
+}
+
+/* Updates the hangman visual based on mistakes */
+function updateHangmanVisual() {
+    const stages = [
+` 
+   _______
+  |/      
+  |        
+  |       
+  |       
+  |      
+__|__
+`,
+` 
+   _______
+  |/      |
+  |        
+  |        
+  |        
+  |       
+__|__
+`,
+` 
+   _______
+  |/      |
+  |      (_)
+  |        
+  |        
+  |       
+__|__
+`,
+` 
+   _______
+  |/      |
+  |      (_)
+  |       |
+  |       |
+  |       
+__|__
+`,
+` 
+   _______
+  |/      |
+  |      (_)
+  |      \|
+  |       |
+  |       
+__|__
+`,
+` 
+   _______
+  |/      |
+  |      (_)
+  |      \|/
+  |       |
+  |      
+__|__
+`,
+` 
+   _______
+  |/      |
+  |      (_)
+  |      \|/
+  |       |
+  |      / \
+__|__
+`
+    ];
+
+    document.getElementById('hangmanVisual').textContent = stages[mistakes];
+}

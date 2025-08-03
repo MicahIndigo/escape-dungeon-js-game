@@ -75,6 +75,15 @@ body > h1 {
     box-shadow: 0 0 30px black;
   }
 
+  /* Story Section */
+  
+  #storyText {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  /* Error styles */
   .error {
     color: red;
     font-weight: bold;

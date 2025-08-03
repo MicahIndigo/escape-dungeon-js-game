@@ -184,3 +184,10 @@ __|__
 
     document.getElementById('hangmanVisual').textContent = stages[mistakes];
 }
+
+/* Displays status message below the puzzle */
+function setStatus(message) {
+    document.getElementById('hangmanStatus').textContent = message;
+}
+
+/* Checks the game state to determine win/loss */

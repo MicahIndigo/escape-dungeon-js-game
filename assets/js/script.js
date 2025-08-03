@@ -69,6 +69,7 @@ function showStory(storyKey) {
     if (story.puzzle) {
       launchPuzzle(
         story.puzzle,
+        storyKey,
         () => {
           loseLife();
           showStory(story.failure);
@@ -83,7 +84,7 @@ function showStory(storyKey) {
 }
 
 /* Function to launch the puzzle game */
-function launchPuzzle(puzzleType, onSuccess, onFail) {
+function launchPuzzle(puzzleType, storyKey, onFail) {
   try {
     switch (puzzleType) {
       case "hangman":

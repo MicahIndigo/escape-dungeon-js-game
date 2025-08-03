@@ -14,7 +14,7 @@ let playerLives = 5; // Player's lives for the game
 function updateLivesDisplay() {
   const livesDisplay = document.getElementById("livesDisplay");
   if (livesDisplay) {
-    livesDisplay.textContent = `Lives Remaining: ${playerLives}`;
+    livesDisplay.textContent = ` ${playerLives}`;
   }
 }
 

@@ -36,3 +36,19 @@ function resetHangmanState() {
 }
 
 /* Builds the Hangman UI and renders in the container */
+function renderHangmanUI() {
+    const html = `
+        <h3>Hangman Puzzle</h3>
+        <pre id="hangmanVisual" cladss="hangman-visual"></pre> <!-- ASCII art for hangman -->
+        <p id="hangmanWordDisplay"></p>
+        <input type="text" id="hangmanInput" maxlength="1" placeholder="Guess a letter" />
+        <button id="hangmanGuessBtn">Guess</button>
+        <button id="hangmanHintBtn">Hint</button>
+        <p id="hangmanStatus"></p>
+        `;
+        puzzleGameContainer.innerHTML = html;
+
+        // Add event listeners for buttons
+        document.getElementById("hangmanGuessBtn").addEventListener("click", handleGuess);
+        document.getElementById("hangmanHintBtn").addEventListener("click", showHint);
+}

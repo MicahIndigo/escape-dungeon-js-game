@@ -1,6 +1,6 @@
 const storyData = {
     start: {
-        text: "After waking up in a dark room, you find yourself in a mysterioius dungeon. There's a strange insctiption on the wall, you must find a way to escape!",
+        text: "After waking up in a dark room, you find yourself in a mysterioius dungeon. There's a strange inscription on the wall, you must find a way to escape!",
         options: [
             { text: "Enter the room", next: "room1" }
         ]

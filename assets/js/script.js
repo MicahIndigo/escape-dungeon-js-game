@@ -3,8 +3,8 @@
 const startButton = document.getElementById("startButton");
 const startScreen = document.getElementById("startScreen");
 const gameContainer = document.getElementById("escapeDungeonContainer");
-const storyText = document.getElementById("storyText");
-const optionsContainer = document.getElementById("optionsContainer");
+const storyText = document.getElementById("storyDialogue");
+const optionsContainer = document.getElementById("storyOptions");
 const puzzleContainer = document.getElementById("puzzleGameContainer");
 
 /* Hides the start screen and shows the game */

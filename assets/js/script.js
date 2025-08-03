@@ -7,7 +7,27 @@ const storyText = document.getElementById("storyDialogue");
 const optionsContainer = document.getElementById("storyOptions");
 const puzzleContainer = document.getElementById("puzzleGameContainer");
 
-/* Hides the start screen and shows the game */
+let playerLives = 5; // Player's lives for the game
+
+/* Show lives in UI */
+
+function updateLivesDisplay() {
+  const livesDisplay = document.getElementById("livesDisplay");
+  if (livesDisplay) {
+    livesDisplay.textContent = `Lives Remaining: ${playerLives}`;
+  }
+}
+
+/* function when player loses a life */
+function loseLife() {
+  playerLives--;
+  updateLivesDisplay();
+  if (playerLives <= 0) {
+    showStory("gameOver");
+  }
+}
+
+/* Hides the start screen and starts the game */
 startButton.addEventListener("click", () => {
     startScreen.style.display = "none";
     gameContainer.style.display = "block";
@@ -39,16 +59,22 @@ function showStory(storyKey) {
 
       /*When option is clicked, go the next story step */
       button.addEventListener("click", () => {
+        if (option.action) option.action();
         showStory(option.next);
       });
       optionsContainer.appendChild(button);
     });
-
+    
     /* Launches puzzle game if chosen option */
     if (story.puzzle) {
-      launchPuzzle(story.puzzle);
+      launchPuzzle(
+        story.puzzle,
+        () => {
+          loseLife();
+          showStory(story.failure);
+        }
+      );
     }
-
   } catch (error) {
     // If an error occurs, display an error message in the story text.
     storyText.textContent = "Oops! Something went wrong in the story.";
@@ -57,20 +83,20 @@ function showStory(storyKey) {
 }
 
 /* Function to launch the puzzle game */
-function launchPuzzle(puzzleType) {
+function launchPuzzle(puzzleType, onSuccess, onFail) {
   try {
     switch (puzzleType) {
       case "hangman":
-        startHangman(); /* Starts the Hangman game hangman.js */
+        startHangman(onSuccess, onFail); /* Starts the Hangman game hangman.js */
         break;
       case "memory":
-        startMemory(); /* Starts the Memory game memory.js */
+        startMemory(onSuccess, onFail); /* Starts the Memory game memory.js */
         break;
       case "rps":
-        startRPS(); /* Starts the Rock-Paper-Scissors game rps.js */
+        startRPS(onSuccess, onFail); /* Starts the Rock-Paper-Scissors game rps.js */
         break;
       case "scramble":
-        startScramble(); /* Starts the Scramble game scramble.js */
+        startScramble(onSuccess, onFail); /* Starts the Scramble game scramble.js */
         break;
       default:
         // If the puzzle type is not recognized, throw an error.

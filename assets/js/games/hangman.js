@@ -21,3 +21,9 @@ function startHangmanPuzzle(callback) {
     updateWordDisplay();
     if (callback) callback('hangman');
 }
+
+/* Randomly picks a word from the hangmanWords array */
+function pickRandomWord() {
+    return hangmanWords[Math.floor(Math.random() * hangmanWords.length)];
+}
+

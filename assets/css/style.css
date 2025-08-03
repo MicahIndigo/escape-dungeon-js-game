@@ -25,7 +25,10 @@ body {
     font-family: var(--game-font);
     margin: 0;
     padding: 0;
-    background-image: url('assets/images/3d-fantasy-scene.jpg') no-repeat center center fixed;
+    background-image: url('../images/3d-fantasy-scene.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     background-size: cover;
 }
 

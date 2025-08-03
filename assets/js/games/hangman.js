@@ -52,3 +52,45 @@ function renderHangmanUI() {
         document.getElementById("hangmanGuessBtn").addEventListener("click", handleGuess);
         document.getElementById("hangmanHintBtn").addEventListener("click", showHint);
 }
+
+/* Updates the displayed word with correct guesses */
+function updateWordDisplay () {
+    const display = selectedWord
+        .split('')
+        .map(letter => guessedLetters.includes(letter) ? letter : '_')
+        .join(' ');
+    document.getElementById('hangmanWordDisplay').textContent = display;
+}
+
+/* Proccesses the players letter input */
+function handleGuess() {
+    const input = document.getElementById("hangmanInput");
+    const guess = input.value.toLowerCase();
+    input.value = '';
+
+    // Validate the input
+    if (!guess || guessedLetters.length !== !/[a-z]/.test(guess)) {
+        setStatus('Enter a valid single letter.');
+        return;
+    }
+
+    // Check if the letter has already been guessed
+    if (guessedLetters.includes(guess)) {
+        setStatus('You already guessed that letter.');
+        return;
+    }
+
+    guessedLetters.push(guess);
+
+    // Check if the guessed letter is correct
+    if (selectedWord.includes(guess)) {
+        setStatus('Correct!');
+    } else {
+        mistakes++;
+        setStatus(`Incorrect! mistakes: ${mistakes}/${maxMistakes}`);
+    }
+
+    updateWordDisplay();
+    updateHangmanVisual();
+    checkGameState();
+}

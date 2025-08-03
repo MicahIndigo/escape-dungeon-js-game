@@ -27,3 +27,12 @@ function pickRandomWord() {
     return hangmanWords[Math.floor(Math.random() * hangmanWords.length)];
 }
 
+/* Resets Variables and clears container */
+function resetHangmanState() {
+    guessedLetters = [];
+    mistakes = 0;
+    hintUsed = false;
+    puzzleGameContainer.innerHTML = '';
+}
+
+/* Builds the Hangman UI and renders in the container */

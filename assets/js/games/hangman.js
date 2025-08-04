@@ -72,7 +72,7 @@ function handleGuess() {
     input.value = '';
 
     // Validate the input
-    if (!guess || guessedLetters.length !== !/[a-z]/.test(guess)) {
+    if (!/[a-z]/.test(guess)) {
         setStatus('Enter a valid single letter.');
         return;
     }

@@ -52,24 +52,24 @@ function showStory(storyKey) {
     optionsContainer.innerHTML = "";
     puzzleContainer.innerHTML = "";
 
-    /* Creates button for each story option */
-    story.options.forEach(option => {
-      const button = document.createElement("button");
-      button.textContent = option.text;
-
-      /*When option is clicked, go the next story step */
-      button.addEventListener("click", () => {
-        if (option.action) option.action();
-        showStory(option.next);
+    /* Only creates button if story option exists */
+    if (story.options && Array.isArray(story.options)) {
+      story.options.forEach(option => {
+        const button = document.createElement("button");
+        button.texxtContent = option.text;
+        button.addEventListener("click", () => {
+          if (option.action) option.action();
+          showStory(option.next);
+        });
+        optionsContainer.appendChild(button);
       });
-      optionsContainer.appendChild(button);
-    });
+    }
     
     /* Launches puzzle game if chosen option */
     if (story.puzzle) {
       launchPuzzle(
         story.puzzle,
-        storyKey,
+        () => showStory(story.success), // onSuccess callback
         () => {
           loseLife();
           showStory(story.failure);
@@ -84,32 +84,20 @@ function showStory(storyKey) {
 }
 
 /* Function to launch the puzzle game */
-function launchPuzzle(puzzleType, storyKey, onFail) {
+function launchPuzzle(puzzleType, onSuccess, onFail) {
   try {
     switch (puzzleType) {
       case "hangman":
-        startHangman(
-          () => showStory(storyData[storyKey].success), // onSuccess
-          onFail
-        ); /* Starts the Hangman game hangman.js */
+        startHangman(onSuccess, onFail); /* Starts the Hangman game hangman.js */
         break;
       case "memory":
-        startMemory(
-          () => showStory(storyData[storyKey].success),
-          onFail
-        ); /* Starts the Memory game memory.js */
+        startMemory(onSuccess, onFail); /* Starts the Memory game memory.js */
         break;
       case "rps":
-        startRPS(
-          () => showStory(storyData[storyKey].success),
-          onFail         
-        ); /* Starts the Rock-Paper-Scissors game rps.js */
+        startRPS(onSuccess, onFail); /* Starts the Rock-Paper-Scissors game rps.js */
         break;
       case "scramble":
-        startScramble(
-          () => showStory(storyData[storyKey].success),
-          onFail       
-        ); /* Starts the Scramble game scramble.js */
+        startScramble(onSuccess, onFail); /* Starts the Scramble game scramble.js */
         break;
       default:
         // If the puzzle type is not recognized, throw an error.

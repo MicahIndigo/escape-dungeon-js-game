@@ -68,3 +68,55 @@ function buildMemoryUI() {
     puzzleGameContainer.appendChild(board);
     puzzleGameContainer.appendChild(status);
 }
+
+/* Starts the countdown timer */
+function startMemoryTimer() {
+    memoryTimer = setInterval(() => {
+        timeRemaining--;
+        updateMemoryStatus();
+
+        if (timeRemaining <= 0) {
+            endMemoryGame(false);
+        }
+    }, 1000);
+}
+
+/* Handle Card Clicks */
+function handleCardClick(e) {
+    const card = e.currentTarget;
+
+    // Prevent flipping if already flipped or matched
+    if (card.classList.contains('matched') || flippedCards.includes(card) || flippedCards.length >= 2) return;
+
+    // Show the symbol
+    card.textContent = card.dataset.symbol;
+    flippedCards.push(card);
+
+    if (flippedCards.length === 2) {
+        const [first, second] = flippedCards;
+        if (first.dataset.symbol === second.dataset.symbol) {
+            // Matched pair
+            first.classList.add('matched');
+            second.classList.add('matched');
+            matchedPairs++;
+            flippedCards = [];
+            if (matchedPairs === memoryImages.length / 2) {
+                endMemoryGame(true);
+            }
+        } else {
+            // No Match
+            attemptsLeft--;
+            updateMemoryStatus();
+
+            setTimeout(() => {
+                first.textContent = '?';
+                second.textContent = '?';
+                flippedCards = [];
+
+                if (attemptsLeft <= 0) {
+                    endMemoryGame(false);
+                }
+            }, 800);
+        }
+    }
+}

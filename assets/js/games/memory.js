@@ -63,7 +63,7 @@ function buildMemoryUI() {
 
     const status = document.createElement('p');
     status.id = 'memoryStatus';
-    status.textContent = `Attempts Left: ${attemptsLeft}, Time Remaining: ${timeRemaining}s`;
+    status.textContent = `Attempts Left: ${attemptsLeft} | Time Remaining: ${timeRemaining}s`;
 
     puzzleGameContainer.appendChild(board);
     puzzleGameContainer.appendChild(status);
@@ -118,5 +118,13 @@ function handleCardClick(e) {
                 }
             }, 800);
         }
+    }
+}
+
+/* Update Status Display */
+function updateMemoryStatus() {
+    const status = document.getElementById('memoryStatus');
+    if (status) {
+        status.textContent = `Attempts Left: ${attemptsLeft} | Time Remaing: ${timeRemaining}s`;
     }
 }

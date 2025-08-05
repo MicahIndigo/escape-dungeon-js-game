@@ -128,3 +128,15 @@ function updateMemoryStatus() {
         status.textContent = `Attempts Left: ${attemptsLeft} | Time Remaing: ${timeRemaining}s`;
     }
 }
+
+/* End the Memory puzzle and trigger success or failure */
+function endMemoryGame(success) {
+    clearInterval(memoryTimer);
+    puzzleGameContainer.innerHTML = '';
+
+    if (success && typeof window.memoryOnSuccess === 'function') {
+        window.memoryOnSuccess();
+    } else if (!success && typeof window.memoryOnFail === 'function') {
+        window.memoryOnFail();
+    }
+}

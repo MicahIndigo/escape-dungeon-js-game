@@ -10,7 +10,7 @@ let flippedCards = [];
 let matchedPairs = 0;
 let attemptsLeft = 3;
 let memoryTimer = null;
-let timeRemaining = 30;
+let timeRemaining = 45;
 
 /* Dom References */
 const puzzleGameContainer = document.getElementById("puzzleGameContainer");
@@ -24,4 +24,14 @@ function startMemory(onSuccess, onFail) {
     resetMemoryState();
     buildMemoryUI();
     startMemoryTimer();
+}
+
+/* Resets Game Variables and clears the UI */
+function resetMemoryState() {
+    shuffledCards = shuffle([memoryImages]);
+    flippedCards = [];
+    matchedPairs = 0;
+    attemptsLeft = 3;
+    timeRemaining = 45;
+    puzzleGameContainer.innerHTML = '';
 }

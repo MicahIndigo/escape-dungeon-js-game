@@ -45,3 +45,26 @@ function shuffle(array) {
     }
     return array;
 }
+
+/* Build and render the Memory puzzle UI */
+function buildMemoryUI() {
+    const board = document.createElement('div');
+    board.className = 'memory-board';
+
+    shuffledCards.forEach((symbol, index) => {
+        const card = document.createElement('div');
+        card.className = 'memory-card';
+        card.dataset.symbol = symbol;
+        card.dataset.index = index;
+        card.textContent = '?';
+        card.addEventListener('click', handleCardClick);
+        board.appendChild(card);
+    });
+
+    const status = document.createElement('p');
+    status.id = 'memoryStatus';
+    status.textContent = `Attempts Left: ${attemptsLeft}, Time Remaining: ${timeRemaining}s`;
+
+    puzzleGameContainer.appendChild(board);
+    puzzleGameContainer.appendChild(status);
+}

@@ -112,13 +112,6 @@ function launchPuzzle(puzzleType, onSuccess, onFail) {
         break;
       case "memory":
         startMemory(onSuccess, onFail); /* Starts the Memory game memory.js */
-        break;
-      case "rps":
-        startRPS(onSuccess, onFail); /* Starts the Rock-Paper-Scissors game rps.js */
-        break;
-      case "scramble":
-        startScramble(onSuccess, onFail); /* Starts the Scramble game scramble.js */
-        break;
       default:
         // If the puzzle type is not recognized, throw an error.
         throw new Error(`Unknown puzzle type: "${puzzleType}"`);

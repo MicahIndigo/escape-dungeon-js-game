@@ -136,3 +136,26 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 
 ### Responsiveness
 - Layout adaots to various screen widths for desktop, tablets and mobile.
+
+[Back to Top](#contents)
+
+
+## Technologies Used
+
+### Languages
+- [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [JavaScript ES6+](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript)
+
+[Back to Top](#contents)
+
+### Tools
+- [Github](https://github.com/)
+- [Balsamiq](https://balsamiq.com/wireframes/)
+- [HTML Validation](https://validator.w3.org/)
+- [CSS Validation](https://jigsaw.w3.org/css-validator/)
+- [JSHint](https://jshint.com/)
+- [Am I Responsive](https://ui.dev/amiresponsive)
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools)
+
+[Back to Top](#contents)

@@ -123,3 +123,13 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 ### Typography
 - Headings: "Space Mono" was imported from google fonts, a mono type font, bold for emphasis.
 - Game text:  "Bitcount prop single" was imported from google fonts, a retro sans-seritf type font, easy-to-read.
+
+### Colour Scheme
+- 
+
+### Images
+- A dark dungeon as a background image to give the aesthetic of a dungeon.
+- Emoji symbols usued in Memory and Hangman puzzles.
+- ASCII art for hangman visual.
+
+[Back to Top](#contents)

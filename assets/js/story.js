@@ -12,7 +12,7 @@ const storyData = {
         success: "room2",
         failure: "hangmanFail"
     },
-
+    
     hangmanFail: {
         text: "The puzzle got the best of you. You feel weak and lose a life. Try again while you still can!",
         options: [
@@ -21,7 +21,7 @@ const storyData = {
     },
 
     room2: {
-        text: "The door unlocks and you advance into a chamber filld with floating rocks.",
+        text: "The door unlocks and you advance into a chamber filled with floating rocks.",
         puzzle: "memory",
         success: "room3",
         failure: "memoryFail"

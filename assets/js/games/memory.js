@@ -1,142 +1,158 @@
 /* Memory Game implementation */
+(() => {
 
-/* Images array */
-const memoryImages = [
-    '🗝️', '❤️', '🔒', '🧩',
-    '🗝️', '❤️', '🔒', '🧩' // Each symbols appear twice
-];
-let shuffledCards = [];
-let flippedCards = [];
-let matchedPairs = 0;
-let attemptsLeft = 3;
-let memoryTimer = null;
-let timeRemaining = 45;
+  /* Images array (pairs already included) */
+  const memoryImages = ['🗝️', '❤️', '🔒', '🧩', '🗝️', '❤️', '🔒', '🧩'];
+  let shuffledCards = [];
+  let flippedCards = [];
+  let matchedPairs = 0;
+  let attemptsLeft = 3;
+  let memoryTimer = null;
+  let timeRemaining = 45;
 
-/* Dom References */
-const puzzleGameContainer = document.getElementById("puzzleGameContainer");
+  /* Private DOM ref — avoids global collisions */
+  const container = document.getElementById("puzzleGameContainer");
 
-/* Function to start the Memory game called in story.js */
-function startMemory(onSuccess, onFail) {
-    // Store the callbacks so puzzleResult can use them later
+  /**
+   * Starts the Memory game.
+   * @param {function} onSuccess - callback for success
+   * @param {function} onFail - callback for failure
+   */
+  function startMemory(onSuccess, onFail) {
     window.memoryOnSuccess = onSuccess;
     window.memoryOnFail = onFail;
-
     resetMemoryState();
     buildMemoryUI();
     startMemoryTimer();
-}
+  }
 
-/* Resets Game Variables and clears the UI */
-function resetMemoryState() {
-    shuffledCards = shuffle([memoryImages]);
+  /**
+   * Resets the memory game state, including shuffling cards,
+   * resetting attempts and timer, and clearing the board.
+   */
+  function resetMemoryState() {
+    shuffledCards = shuffle(memoryImages.slice()); // shuffle a copy
     flippedCards = [];
     matchedPairs = 0;
     attemptsLeft = 3;
     timeRemaining = 45;
     clearInterval(memoryTimer);
-    puzzleGameContainer.innerHTML = '';
-}
+    container.innerHTML = '';
+  }
 
-/* Shuffle the cards(symbols) using Fisher-Yates algorithm */
-function shuffle(array) {
+  /**
+   * Shuffles an array using the Fisher-Yates algorithm.
+   * @param {array} array - the array to shuffle.
+   * @returns {array} The shuffled array.
+   */
+  function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
-}
+  }
 
-/* Build and render the Memory puzzle UI */
-function buildMemoryUI() {
+  /**
+   * Builds the game UI for memory, including the card grid
+   * and status display.
+   */
+  function buildMemoryUI() {
     const board = document.createElement('div');
     board.className = 'memory-board';
-
     shuffledCards.forEach((symbol, index) => {
-        const card = document.createElement('div');
-        card.className = 'memory-card';
-        card.dataset.symbol = symbol;
-        card.dataset.index = index;
-        card.textContent = '?';
-        card.addEventListener('click', handleCardClick);
-        board.appendChild(card);
+      const card = document.createElement('div');
+      card.className = 'memory-card';
+      card.dataset.symbol = symbol;
+      card.dataset.index = index;
+      card.textContent = '?';
+      card.addEventListener('click', handleCardClick);
+      board.appendChild(card);
     });
 
     const status = document.createElement('p');
     status.id = 'memoryStatus';
     status.textContent = `Attempts Left: ${attemptsLeft} | Time Remaining: ${timeRemaining}s`;
+    container.appendChild(board);
+    container.appendChild(status);
+  }
 
-    puzzleGameContainer.appendChild(board);
-    puzzleGameContainer.appendChild(status);
-}
-
-/* Starts the countdown timer */
-function startMemoryTimer() {
+  /**
+   * Starts the countdown timer for the memory game.
+   * If time runs out, the player loses.
+   */
+  function startMemoryTimer() {
     memoryTimer = setInterval(() => {
-        timeRemaining--;
-        updateMemoryStatus();
-
-        if (timeRemaining <= 0) {
-            endMemoryGame(false);
-        }
+      timeRemaining--;
+      updateMemoryStatus();
+      if (timeRemaining <= 0) {
+        endMemoryGame(false);
+      }
     }, 1000);
-}
+  }
 
-/* Handle Card Clicks */
-function handleCardClick(e) {
+  /**
+   * Handles the logic when a card is clicked.
+   * Reveals the card, checks for matches,
+   * and deducts attempts if cards do not match.
+   * @param {event} e - The click event from the card.
+   */
+  function handleCardClick(e) {
     const card = e.currentTarget;
-
-    // Prevent flipping if already flipped or matched
     if (card.classList.contains('matched') || flippedCards.includes(card) || flippedCards.length >= 2) return;
-
-    // Show the symbol
     card.textContent = card.dataset.symbol;
     flippedCards.push(card);
-
     if (flippedCards.length === 2) {
-        const [first, second] = flippedCards;
-        if (first.dataset.symbol === second.dataset.symbol) {
-            // Matched pair
-            first.classList.add('matched');
-            second.classList.add('matched');
-            matchedPairs++;
-            flippedCards = [];
-            if (matchedPairs === memoryImages.length / 2) {
-                endMemoryGame(true);
-            }
-        } else {
-            // No Match
-            attemptsLeft--;
-            updateMemoryStatus();
-
-            setTimeout(() => {
-                first.textContent = '?';
-                second.textContent = '?';
-                flippedCards = [];
-
-                if (attemptsLeft <= 0) {
-                    endMemoryGame(false);
-                }
-            }, 800);
+      const [first, second] = flippedCards;
+      if (first.dataset.symbol === second.dataset.symbol) {
+        first.classList.add('matched');
+        second.classList.add('matched');
+        matchedPairs++;
+        flippedCards = [];
+        if (matchedPairs === memoryImages.length / 2) {
+          endMemoryGame(true);
         }
+      } else {
+        attemptsLeft--;
+        updateMemoryStatus();
+        setTimeout(() => {
+          first.textContent = '?';
+          second.textContent = '?';
+          flippedCards = [];
+          if (attemptsLeft <= 0) {
+            endMemoryGame(false);
+          }
+        }, 800);
+      }
     }
-}
+  }
 
-/* Update Status Display */
-function updateMemoryStatus() {
+  /**
+   * Updates the status display for attempts left and time remaining.
+   */
+  function updateMemoryStatus() {
     const status = document.getElementById('memoryStatus');
     if (status) {
-        status.textContent = `Attempts Left: ${attemptsLeft} | Time Remaing: ${timeRemaining}s`;
+      status.textContent = `Attempts Left: ${attemptsLeft} | Time Remaining: ${timeRemaining}s`;
     }
-}
+  }
 
-/* End the Memory puzzle and trigger success or failure */
-function endMemoryGame(success) {
+  /**
+   * Ends the memory game.
+   * Clears the timer, resets the board,
+   * and calls the appropriate callback based on success/failure.
+   * @param {boolean} success - Whether the player won (true) or lost (false).
+   */
+  function endMemoryGame(success) {
     clearInterval(memoryTimer);
-    puzzleGameContainer.innerHTML = '';
-
+    container.innerHTML = '';
     if (success && typeof window.memoryOnSuccess === 'function') {
-        window.memoryOnSuccess();
+      window.memoryOnSuccess();
     } else if (!success && typeof window.memoryOnFail === 'function') {
-        window.memoryOnFail();
+      window.memoryOnFail();
     }
-}
+  }
+
+  // Export only the start function
+  window.startMemory = startMemory;
+})();

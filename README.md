@@ -39,9 +39,9 @@
 
 ## About
 
-Escape Dungeon is a multi-puzzle text-based browser game. It is based on the escape room games, where players will have to complete different puzzles to escape the dungeon.
+Escape Dungeon is a multi-puzzle text-based browser game. It is based on the escape room concept, where players must complete different puzzles to escape the dungeon. The game combines story-driven choices with classic puzzles for a fun and challenging experience.
 
 ## Rationale 
 
-I wanted to put a spin on your typical everyday games by including the escape room theme. I believe players will enjoy the added story elements as it gives the games an incentive
-while keeping the experience refreshing. This is also a project I can continuosly update whether it be more levels or more games.
+The aim of this project was to create a unique spin on traditional browser games by incorporating an escape room theme. Adding story elements provides context and motivation for completing puzzles, keeping the experience engaging and fresh. This project is designed 
+to be easily extended with new levels and puzzles over time.

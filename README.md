@@ -111,4 +111,15 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 6. **Tips**
    - Pay attention to hints in the story, they might help with the puzzles.
    - Use hints in puzzles strategically; some puzzles limit hint usage.
-   - Replay puzzles if needed to conserve lives for later challenges
+   - Replay puzzles if needed to conserve lives for later challenges.
+
+[Back to Top](#contents)
+
+## Wireframes
+
+
+## Design
+
+### Typography
+- Headings: "Space Mono" was imported from google fonts, a mono type font, bold for emphasis.
+- Game text:  "Bitcount prop single" was imported from google fonts, a retro sans-seritf type font, easy-to-read.

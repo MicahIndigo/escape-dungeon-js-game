@@ -9,6 +9,7 @@
     * [Future Features](#future-features)
 - [User Stories](#user-stories)
 - [User Goals](#user-goals)
+- [How to Play](#how-to-play)
 - [Wireframes](#wireframes)
 - [Design](#design)
   * [Typography](#typography)
@@ -73,3 +74,41 @@ to be easily extended with new levels and puzzles over time.
 
 [Back to Top](#contents)
 
+## User Goals
+
+- Successfully navigate through the dungeon by solving all the puzzles.
+- Preserve the lives by completing puzzles efficiently.
+- Explore the story fully and experince the narrative outcomes.
+
+[Back to Top](#contents)
+
+## How to Play
+
+Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape the dungeon by completing each challenge.
+
+1. **Start the Game**
+   - Click the **Start** button on the welcom screen to begin.
+   - Your lives are displayed at the top; you start with 5 lives.
+
+2. **Follow the Story**
+   - Read the story text carefully.
+   - Make choices by clicking the available buttons to progress through the dungeon.
+
+3. **Solve Puzzles**
+   - Certain story segments will trigger puzzles:
+     - **Hangman**: Guess the letters of a hidden word before making 6 mistakes.
+     - **Memory Game**: Match all card pairs before time or attempts run out.
+   - Each puzzle has retry mechanics if you fail, but failing reduces your lives.
+
+4. **Lives and Game Over**
+   - You lose a life each time you fail a puzzle.
+   - If all lives are lost, the game ends, and you can restart from the beginning.
+
+5. **Winning the Game**
+   - Successfullu complete all puzzles and reach the escape point to win the game.
+   - After escaping, you can choose to play again to try for a better run.
+
+6. **Tips**
+   - Pay attention to hints in the story, they might help with the puzzles.
+   - Use hints in puzzles strategically; some puzzles limit hint usage.
+   - Replay puzzles if needed to conserve lives for later challenges

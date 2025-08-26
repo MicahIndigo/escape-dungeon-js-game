@@ -61,3 +61,15 @@ to be easily extended with new levels and puzzles over time.
 - Background music and sound effects.
 - More visual styling for each puzzle to match story themes.
 - Leaderboards or scoring system.
+
+[Back to Top](#contents)
+
+## User Stories
+
+- As a player, I want to make choices that affect the story so I feel engaged.
+- As a player, I want clear instructions for puzzles so I can complete them.
+- As a player, I want a limited number of lives to add challenge and tension.
+- As a developer, I want modular puzzle files so I can add or update puzzles easily.
+
+[Back to Top](#contents)
+

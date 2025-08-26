@@ -133,3 +133,6 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 - ASCII art for hangman visual.
 
 [Back to Top](#contents)
+
+### Responsiveness
+- Layout adaots to various screen widths for desktop, tablets and mobile.

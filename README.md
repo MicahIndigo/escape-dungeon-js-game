@@ -45,3 +45,19 @@ Escape Dungeon is a multi-puzzle text-based browser game. It is based on the esc
 
 The aim of this project was to create a unique spin on traditional browser games by incorporating an escape room theme. Adding story elements provides context and motivation for completing puzzles, keeping the experience engaging and fresh. This project is designed 
 to be easily extended with new levels and puzzles over time.
+
+### Features
+
+#### Existing Features
+- Multi-puzzle system: Hangman, Memory.
+- Story progression based on success or failure.
+- Retry mechanics for puzzles
+- Lives system: Player starts with 5 lives and loses lives upon puzzle failure.
+- Clear UI with story text, options and puzzle containers
+- Hints implemented in certain puzzles
+
+#### Future Features
+- Additional puzzles and story branches.
+- Background music and sound effects.
+- More visual styling for each puzzle to match story themes.
+- Leaderboards or scoring system.

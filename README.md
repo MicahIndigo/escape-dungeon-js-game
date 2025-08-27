@@ -182,9 +182,18 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 | Laptop  | Mackbook Air       | Good       | Good               | Good              | Good          |
 | Desktop | Desktop            | Good       | Good               | Good              | Good          |
 
+![Responsiveness Test](docs/screenshot-responsiveness.png)
+
 [Back to top](#contents)
 
-![Responsiveness Test](docs/screenshot-responsiveness.png)
+### Code Valdidation
+
+#### HTML
+
+[W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML") was used to validate and test my html file, it came back with no errors.
+
+* HTML Page:
+![W3CHTML Validator](docs/screenshot-html-validation.png)
 
 ## Deployment
 

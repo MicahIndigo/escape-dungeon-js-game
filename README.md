@@ -164,10 +164,10 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 
 ### Bug Report
 
-| ---- | Bugs found             | Bug description                                                          | Status of Bug  | Comments                                                                                                                                 |
-| ---- | ---------------------- | ------------------------------------------------------------------------ | -------------  | ---------------------------------------------------------------------------------------------------------------------------------------- |
-|  1   | Options button         | Story options button displays incorrcttly.                               |     Fixed      | Spelling mistake in script.js was causing this bug. Corrected spelling and button now displays correctly.                                |
-|  2   | Memory game not firing | After successfully completing hangman, the memory game UI doesn't load.  |     Fixed      | Encased game scripts with IIFE to isolate the scope and attached functions to "window" (i.e "startHangman") so it is available globally. |
+| Bug no. | Bugs found             | Bug description                                                          | Status of Bug  | Comments                                                                                                                                 |
+| ------- | ---------------------- | ------------------------------------------------------------------------ | -------------  | ---------------------------------------------------------------------------------------------------------------------------------------- |
+|    1    | Options button         | Story options button displays incorrcttly.                               |     Fixed      | Spelling mistake in script.js was causing this bug. Corrected spelling and button now displays correctly.                                |
+|    2    | Memory game not firing | After successfully completing hangman, the memory game UI doesn't load.  |     Fixed      | Encased game scripts with IIFE to isolate the scope and attached functions to "window" (i.e "startHangman") so it is available globally. |
 
 [Back to Top](#contents)
 

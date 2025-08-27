@@ -195,6 +195,17 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 * HTML Page:
 ![W3CHTML Validator](docs/screenshot-html-validation.png)
 
+[Back to Top](#contents)
+
+#### CSS
+
+CSS code for the webpage was validated on [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS Validator"). It returned no errors.
+
+* CSS:
+![W3CCSS Validator](docs/screenshot-css-validation.png)
+
+[Back to Top](#contents)
+
 ## Deployment
 
 ### Deploy Project

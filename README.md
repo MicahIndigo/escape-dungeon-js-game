@@ -184,6 +184,8 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 
 [Back to top](#contents)
 
+![Responsiveness Test](docs/screenshot-responsiveness.png)
+
 ## Deployment
 
 ### Deploy Project

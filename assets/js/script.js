@@ -18,7 +18,7 @@ function updateLivesDisplay() {
     livesDisplay.textContent = ` ${playerLives}`;
   }
 }
-updateLivesDisplay();
+
 
 
 /**
@@ -28,9 +28,11 @@ updateLivesDisplay();
 function loseLife() {
   playerLives--;
   updateLivesDisplay();
-  if (playerLives <= 0) {
+  const isGameOver = playerLives <= 0;
+  if (isGameOver) {
     showStory("gameOver");
   }
+  return isGameOver;
 }
 
 
@@ -84,8 +86,10 @@ function showStory(storyKey) {
         story.puzzle,
         () => showStory(story.success), // onSuccess callback
         () => {
-          loseLife(); // Decrease player life on failure
-          showStory(story.failure); // onFail callback
+          // On failure, check if player has lives left
+          if (!loseLife()) {
+            showStory(story.failure);
+          }
         }
       );
     }

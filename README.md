@@ -168,6 +168,7 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 | ------- | ---------------------- | ------------------------------------------------------------------------ | -------------  | ---------------------------------------------------------------------------------------------------------------------------------------- |
 |    1    | Options button         | Story options button displays incorrcttly.                               |     Fixed      | Spelling mistake in script.js was causing this bug. Corrected spelling and button now displays correctly.                                |
 |    2    | Memory game not firing | After successfully completing hangman, the memory game UI doesn't load.  |     Fixed      | Encased game scripts with IIFE to isolate the scope and attached functions to "window" (i.e "startHangman") so it is available globally. |
+|    3    | Player lives count     | Player life count would continue to decrease past 0 and not end game.    |     Fixed      | The logic was updated so that the failure branch only shows if the player still has lives remaining.                                     |
 
 [Back to Top](#contents)
 

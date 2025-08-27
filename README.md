@@ -18,6 +18,7 @@
   * [Responsiveness](#responsiveness)
 - [Technologies Used](#techenologies-used)
   * [Languages](#languages)
+  * [Libraries and Frameworks](#libraries-and-frameworks)
   * [tools](#tools)
 - [Testing](#testing)
   * [Bug Report](#bug-report)
@@ -148,6 +149,9 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 - [JavaScript ES6+](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript)
 
 [Back to Top](#contents)
+
+### Libraries and Frameworks
+- [Google fonts](https://fonts.google.com/)
 
 ### Tools
 - [Github](https://github.com/)

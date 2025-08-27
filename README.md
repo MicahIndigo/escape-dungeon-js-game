@@ -224,6 +224,15 @@ CSS code for the webpage was validated on [W3C CSS Validation Service](https://j
 
 ![WAVE](assets/docs/screenshot-wave.png)
 
+### Browser Testing
+- Cross-browser testing was done using [Browserstack](https://www.browserstack.com/)
+- Chrome, Firefox, Edge tested for consistent experience. No issues were found.
+
+![Edge](assets/docs/screenshot-edge-browser.png)
+![Chrome](assets/docs/screenshot-chrome-browser.png)
+![Firefox](assets/docs/screenshot-firefox-browser.png)
+
+
 ## Deployment
 
 ### Deploy Project

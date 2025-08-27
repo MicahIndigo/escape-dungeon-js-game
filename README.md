@@ -206,6 +206,14 @@ CSS code for the webpage was validated on [W3C CSS Validation Service](https://j
 
 [Back to Top](#contents)
 
+### User Story Testing
+- Verified story progression, options and puzzle triggering.
+
+### Features Testing
+- Each puzzle manually tested individually for functionality.
+
+[Back to Top](#contents)
+
 ## Deployment
 
 ### Deploy Project

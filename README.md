@@ -172,3 +172,13 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 [Back to Top](#contents)
 
 ### Responsiveness Test
+- Am I Responsive was used to test the repsonsiveness of suite. Mobile-first Strategy was used when building the site and all changes was verified using Google DevTools.
+
+| Size    | Device Example     | Navigation | Element Alignments | Content Placement | Functionality |
+| ------- | ------------------ | ---------- | ------------------ | ----------------- | ------------- |
+| Mobile  | iPhone 11 PRO      | Good       | Good               | Good              | Good          |
+| Tablet  | iPad Air           | Good       | Good               | Good              | Good          |
+| Laptop  | Mackbook Air       | Good       | Good               | Good              | Good          |
+| Desktop | Desktop            | Good       | Good               | Good              | Good          |
+
+[Back to top](#contents)

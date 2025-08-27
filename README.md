@@ -182,3 +182,41 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 | Desktop | Desktop            | Good       | Good               | Good              | Good          |
 
 [Back to top](#contents)
+
+## Deployment
+
+### Deploy Project
+
+Escape Dungeon website will be deployed early on in the web design process using Github pages via the steps below:
+
+1. Navigate to repository on Github and click **Settings**.
+2. Once in settings, select **Pages** in the side navigation.
+3. In the none dropdown, select **Main**.
+4. Click on **Save** button.
+5. The website is now live at https://micahindigo.github.io/escape-dungeon-js-game/
+
+_Any changes required for the website, can be made, comitted and pushed to Github._
+
+[Back to Top](#contents)
+
+### Fork Project
+
+Forking the Github repository allows you to duplicate the local repository so changes/modifications can be made to the duplicate repository without compromising the original repository.
+
+1. Login to **Github**
+2. Locate the repository.
+3. Click to open it.
+4. Locate the **fork** button on the **right** side of the mennu.
+5. To copy the repository to your Github account, **click** button.
+
+### Clone Project
+
+1. Login to **Github**.
+2. Navigate to **Main** page of repository and click **Code**.
+3. **Copy URL** of repository.
+4. Open your **IDE**.
+5. Change current working directory to location you want the cloned directory.
+6. Type Git clone and then paste the URL you copied earlier.
+7. Press **Enter** to create your local clone.
+
+[Back to Top](#contents)

@@ -118,6 +118,12 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 
 ## Wireframes
 
+- Best practices was followed when creating wireframes, mobile first, then tablet and lastly desktop.
+- [Mobile Wireframe](assets/docs/mobile-wireframe.png)
+- [Tablet Wireframe](assets/docs/tablet-wireframe.png)
+- [Desktop Wireframe](assets/docs/desktop-wireframe.png)
+
+[Back to Top](#contents)
 
 ## Design
 

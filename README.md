@@ -126,7 +126,8 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 - Game text:  "Bitcount prop single" was imported from google fonts, a retro sans-seritf type font, easy-to-read.
 
 ### Colour Scheme
-- 
+- Dark backgrounds with high-contrast text for readability.
+- Puzzle elements highlighted with subtle accent colors.
 
 ### Images
 - A dark dungeon as a background image to give the aesthetic of a dungeon.

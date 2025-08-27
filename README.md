@@ -135,7 +135,7 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 [Back to Top](#contents)
 
 ### Responsiveness
-- Layout adaots to various screen widths for desktop, tablets and mobile.
+- Layout adapts to various screen widths for desktop, tablets and mobile.
 
 [Back to Top](#contents)
 

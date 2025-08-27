@@ -182,7 +182,7 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 | Laptop  | Mackbook Air       | Good       | Good               | Good              | Good          |
 | Desktop | Desktop            | Good       | Good               | Good              | Good          |
 
-![Responsiveness Test](docs/screenshot-responsiveness.png)
+![Responsiveness Test](/assets/docs/screenshot-responsiveness.png)
 
 [Back to top](#contents)
 
@@ -193,7 +193,7 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML") was used to validate and test my html file, it came back with no errors.
 
 * HTML Page:
-![W3CHTML Validator](docs/screenshot-html-validation.png)
+![W3CHTML Validator](/assets/docs/screenshot-html-validation.png)
 
 [Back to Top](#contents)
 
@@ -202,7 +202,7 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 CSS code for the webpage was validated on [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS Validator"). It returned no errors.
 
 * CSS:
-![W3CCSS Validator](docs/screenshot-css-validation.png)
+![W3CCSS Validator](/assets/docs/screenshot-css-validation.png)
 
 [Back to Top](#contents)
 
@@ -213,6 +213,11 @@ CSS code for the webpage was validated on [W3C CSS Validation Service](https://j
 - Each puzzle manually tested individually for functionality.
 
 [Back to Top](#contents)
+
+### Accessibility Testing
+- [WAVE Tool](https://wave.webaim.org/) tool was used which helps to determine if web content is accessible to individuals with diverse needs. No issues were raised.
+
+![WAVE](assets/docs/screenshot-wave.png)
 
 ## Deployment
 

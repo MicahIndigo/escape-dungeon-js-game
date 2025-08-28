@@ -184,6 +184,8 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 |    2    | Memory game not firing | After successfully completing hangman, the memory game UI doesn't load.  |     Fixed      | Encased game scripts with IIFE to isolate the scope and attached functions to "window" (i.e "startHangman") so it is available globally. |
 |    3    | Player lives count     | Player life count would continue to decrease past 0 and not end game.    |     Fixed      | The logic was updated so that the failure branch only shows if the player still has lives remaining.                                     |
 |    4    | Scramble input error   | Scramble game crashed when submitting an answer.                         |     Fixed      | The game was trying to read `.toLowerCase()` on the input element instead of its value. Fixed by using `input.value.toLowerCase()`.  |
+|    5    | RPS buttons undefined  | RPS fame UI crashed due to incorrect variable name for buttons container.|     Fixed      | Corrected the buttons container in buildRPSUI; now buttons render properly.                                                               |
+|    6    | RPS case sensitivity issue| Player win/lose logic wans't working                                  |     Fixed      | Fixed typos in `determineWinner` and variable capitalisation(`ComputerScore` to `computerScore`).                                       |
 
 [Back to Top](#contents)
 

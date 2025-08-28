@@ -45,7 +45,7 @@
         // Create choice buttons for RPS
         const choices = ["Rock", "Paper", "Scissors"];
         const buttonContainer = document.createElement('div');
-        buttonsContainer.className = "rps-buttons";
+        buttonContainer.className = "rps-buttons";
 
         choices.forEach(choice => {
             const btn = document.createElement('button');
@@ -84,7 +84,7 @@
         updateScore();
 
         // End condition: best of 3
-        if (playerScore === 2 || ComputerScore === 2 || roundsPlayed === 3) {
+        if (playerScore === 2 || computerScore === 2 || roundsPlayed === 3) {
             endRPSGame(playerScore > computerScore);
         }
     }
@@ -105,7 +105,7 @@
      * @param {string} computer - Computer's move.
      * @returns {string} - "win", "lose", or "draw".
      */
-    function determinWinner(player, computer) {
+    function determineWinner(player, computer) {
         if (player === computer) return "draw";
         if (
             (player === "Rock" && computer === "Scissors") ||
@@ -126,7 +126,7 @@
     function updateStatus(player, computer, result) {
         const status = document.getElementById('rpsStatus');
         if (!status) return;
-        let message = ` You chose ${player}, Computer cjhose ${computer}. `;
+        let message = ` You chose ${player}, Computer chose ${computer}. `;
         if (result === "win") {
             message += "You win this round!";
         } else if (result === "lose") {

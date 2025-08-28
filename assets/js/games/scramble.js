@@ -9,4 +9,9 @@
 
     // Private DOM ref (no global collision)
     const container = document.getElementById("puzzleGameContainer");
+
+    // Word bank for the scramble game
+    const wordBank = ["sword", "dungeon", "escape", "magic", "dragon", "puzzle", "torch", "shield", "castle", "riddle"];
+
+    
 })();

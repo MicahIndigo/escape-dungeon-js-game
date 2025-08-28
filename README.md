@@ -51,12 +51,13 @@ to be easily extended with new levels and puzzles over time.
 ### Features
 
 #### Existing Features
-- Multi-puzzle system: Hangman, Memory.
+- Multi-puzzle system: Hangman, Memory, Rock-Paper-Scissors (RPS), Scramble.
 - Story progression based on success or failure.
-- Retry mechanics for puzzles
+- Retry mechanics for puzzles.
 - Lives system: Player starts with 5 lives and loses lives upon puzzle failure.
-- Clear UI with story text, options and puzzle containers
-- Hints implemented in certain puzzles
+- Clear UI with story text, options and puzzle containers.
+- Hints implemented in certain puzzles.
+- Timers in certain puzzles to increase challenge.
 
 #### Future Features
 - Additional puzzles and story branches.
@@ -99,6 +100,8 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
    - Certain story segments will trigger puzzles:
      - **Hangman**: Guess the letters of a hidden word before making 6 mistakes.
      - **Memory Game**: Match all card pairs before time or attempts run out.
+     _ **Rock-Paper-Scissors (RPS)**: Beat the opponent in a best-of-3 match to proceed.
+     - **Scramble Game**: Unscramble a randomized word before the timer reaches 0 or you run out of attempts.
    - Each puzzle has retry mechanics if you fail, but failing reduces your lives.
 
 4. **Lives and Game Over**
@@ -180,6 +183,7 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 |    1    | Options button         | Story options button displays incorrcttly.                               |     Fixed      | Spelling mistake in script.js was causing this bug. Corrected spelling and button now displays correctly.                                |
 |    2    | Memory game not firing | After successfully completing hangman, the memory game UI doesn't load.  |     Fixed      | Encased game scripts with IIFE to isolate the scope and attached functions to "window" (i.e "startHangman") so it is available globally. |
 |    3    | Player lives count     | Player life count would continue to decrease past 0 and not end game.    |     Fixed      | The logic was updated so that the failure branch only shows if the player still has lives remaining.                                     |
+|    4    | Scramble input error   | Scramble game crashed when submitting an answer.                         |     Fixed      | The game was trying to read `.toLowerCase()` on the input element instead of its value. Fixed by using `input.value.toLowerCase()`.  |
 
 [Back to Top](#contents)
 

@@ -88,4 +88,14 @@
             endRPSGame(playerScore > computerScore);
         }
     }
+
+    /**
+     * Randomly selects computer's choice.
+     * @returns {string} - "Rock", "Paper", or "Scissors"
+     */
+    function getComputerChoice() {
+        const choices = ["Rock", "Paper", "Scissors"];
+        const randomIndex = Math.floor(Math.random() * choices.length);
+        return choices[randomIndex];
+    }
 })();

@@ -146,4 +146,20 @@
             score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
         }
     }
+
+    /**
+     * End the game and call appropriate callback.
+     * @param {boolean} success - Whether player won overall.
+     */
+    function endRPSGame(success) {
+        container.innerHTML = '';
+        if (success && typeof window.rpsOnSuccess === 'function') {
+            window.rpsOnSuccess();
+        } else if (!success && typeof window.rpsOnFail === 'function') {
+            window.rpsOnFail();
+        }
+    }
+
+    // Export start function
+    window.startRPS = startRPS;
 })();

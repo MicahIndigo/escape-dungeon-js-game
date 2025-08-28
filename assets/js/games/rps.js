@@ -98,4 +98,22 @@
         const randomIndex = Math.floor(Math.random() * choices.length);
         return choices[randomIndex];
     }
+
+    /**
+     * Determines winner of the round.
+     * @param {string} player - Player's move.
+     * @param {string} computer - Computer's move.
+     * @returns {string} - "win", "lose", or "draw".
+     */
+    function determinWinner(player, computer) {
+        if (player === computer) return "draw";
+        if (
+            (player === "Rock" && computer === "Scissors") ||
+            (player === "Paper" && computer === "Rock") ||
+            (player === "Scissors" && computer === "Paper")
+        ) {
+            return "win";
+        }
+        return "lose";
+    }
 })();

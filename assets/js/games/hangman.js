@@ -1,14 +1,10 @@
 /* Hangman Game Implementation */
 (() => {
     
-    /**
-     * Word bank for hangman game
-     */
+    /* Word bank for hangman game */
     const hangmanWords = ['torch', 'dungeon', 'glove', 'escape', 'riddle', 'symbols', 'puzzle', 'adventure', 'challenge'];
 
-    /**
-     * Game state variables
-     */
+    /* Game state variables */
     let selectedWord = ''; // The word to guess
     let guessedLetters = []; // Letters guessed by the player
     const maxMistakes = 6; // Maximum number of incorrect guesses allowed

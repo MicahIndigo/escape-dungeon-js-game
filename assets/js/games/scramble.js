@@ -71,4 +71,16 @@
         timer.textContent = `Time left: ${timeLeft}s`;
         container.appendChild(timer);
     }
+
+    /**
+     * Shuffle the letters of a word
+     * @param {string} word
+     * @returns {string} scrambled word
+     */
+    function shuffleWord(word) {
+        return word
+            .split("")
+            .sort(() => Math.random() - 0.5)
+            .join("");
+    }
 })();

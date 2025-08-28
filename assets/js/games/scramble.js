@@ -91,4 +91,42 @@
     function getRandomWord() {
         return wordBank[Math.floor(Math.random() * wordBank.length)];
     }
+
+    /**
+     * Check the player's answer
+     */
+    function checkAnswer() {
+        const input = document.getElementById("scrambleInput");
+        const status = document.getElementById("scrambleStatus");
+
+        if (!input) return;
+
+        if (input.ariaValueMax.toLowerCase() === currentWord.toLowerCase()) {
+            endGame(true);
+        } else {
+            attemptsLeft--;
+            if (attemptsLeft > 0) {
+                status.textContent = `Wrong! Attempts left: ${attemptsLeft}`;
+            } else {
+                endGame(false);
+            }
+        }
+    }
+
+    /**
+     * Start the countdown timer
+     */
+    function startTimer() {
+        const timerDisplay = document.getElementById("scrambleTimer");
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            if (timerDisplay) {
+                timerDisplay.textContent = `Time left: ${timeLeft}s`;
+            }
+
+            if (timeLeft <= 0) {
+                endGame(false);
+            }
+        }, 1000);
+    }
 })();

@@ -116,4 +116,34 @@
         }
         return "lose";
     }
+
+    /**
+     * Update status message with round results.
+     * @param {string} player - Player's move.
+     * @param {string} computer - Computer's move.
+     * @param {string} result - "win", "lose", or "draw".
+     */
+    function updateStatus(player, computer, result) {
+        const status = document.getElementById('rpsStatus');
+        if (!status) return;
+        let message = ` You chose ${player}, Computer cjhose ${computer}. `;
+        if (result === "win") {
+            message += "You win this round!";
+        } else if (result === "lose") {
+            message += "You lose this round!";
+        } else {
+            message += "Its a draw!";
+        }
+        status.textContent = message;
+    }
+
+    /**
+     * Update the scoreboard.
+     */
+    function updateScore() {
+        const score = document.getElementById('rpsScore');
+        if (score) {
+            score.textContent = `Player: ${playerScore} | Computer: ${computerScore}`;
+        }
+    }
 })();

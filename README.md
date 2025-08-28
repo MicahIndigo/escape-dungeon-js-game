@@ -122,9 +122,9 @@ Escape Dungeon is a story-driven, multi-puzzle game where your goal is to escape
 ## Wireframes
 
 - Best practices was followed when creating wireframes, mobile first, then tablet and lastly desktop.
-- [Mobile Wireframe](assets/docs/mobile-wireframe.png)
-- [Tablet Wireframe](assets/docs/tablet-wireframe.png)
-- [Desktop Wireframe](assets/docs/desktop-wireframe.png)
+- ![Mobile Wireframe](assets/docs/mobile-wireframe.png)
+- ![Tablet Wireframe](assets/docs/tablet-wireframe.png)
+- ![Desktop Wireframe](assets/docs/desktop-wireframe.png)
 
 [Back to Top](#contents)
 
@@ -240,6 +240,15 @@ CSS code for the webpage was validated on [W3C CSS Validation Service](https://j
 
 ![WAVE](assets/docs/screenshot-wave.png)
 
+[Back to Top](#contents)
+
+### Lighthouse Testing
+- Google Chrome Lighthouse was used to evaluate performance, accessibility and best practices.
+
+![Lighthouse](assets/docs/screenshot-lighthouse.png)
+
+[Back to Top](#contents)
+
 ### Browser Testing
 - Cross-browser testing was done using [Browserstack](https://www.browserstack.com/)
 - Chrome, Firefox, Edge tested for consistent experience. No issues were found.
@@ -247,6 +256,8 @@ CSS code for the webpage was validated on [W3C CSS Validation Service](https://j
 ![Edge](assets/docs/screenshot-edge-browser.png)
 ![Chrome](assets/docs/screenshot-chrome-browser.png)
 ![Firefox](assets/docs/screenshot-firefox-browser.png)
+
+[Back to Top](#contents)
 
 
 ## Deployment
@@ -286,3 +297,22 @@ Forking the Github repository allows you to duplicate the local repository so ch
 7. Press **Enter** to create your local clone.
 
 [Back to Top](#contents)
+
+## Credits
+
+- **Project Author**: Emica Gordon
+- **Wireframes**: Created in Balsamiq
+- **Fonts**:
+  - [Space Mono](https://fonts.google.com/specimen/Space+Mono) – for headings  
+  - [Bitcount Prop Single](https://fonts.google.com/specimen/Bitcount+Prop+Single) – for game text
+- **Puzzle Game Logic**: Custom JavaScript (Hangman, Memory, Rock-Paper-Scissors, Word Scramble)
+- **Testing Tools**:
+  - [WAVE](https://wave.webaim.org/) – accessibility testing  
+  - [Lighthouse](https://developers.google.com/web/tools/lighthouse) – performance and best practices  
+  - [Am I Responsive](https://ui.dev/amiresponsive) – responsiveness testing  
+  - [BrowserStack](https://www.browserstack.com/) – cross-browser testing  
+  - Chrome DevTools
+- **Assets**: 
+  - Royalty-free background Image taken from [Freepik](https://www.freepik.com/free-ai-image/3d-fantasy-scene_157440485.htm#fromView=keyword&page=1&position=2&uuid=9a39e311-3e6e-4e98-88a2-3da296ae5bbb&query=Dungeon+Wall)
+  - Emojis and ASCII art used for puzzle visuals.
+- **Inspiration**: Classic escape room and text-based adventure games.

@@ -228,6 +228,10 @@ CSS code for the webpage was validated on [W3C CSS Validation Service](https://j
 
 ### Features Testing
 - Each puzzle manually tested individually for functionality.
+- Hangman: tested wrong/right guesses, game over states and success state.
+- Memory: tested card matching, timer countdown, win/lose states.
+-Rock-Paper-Scissors: tested button clicks, round logic, best-of-3 and win/lose callbacks.
+- Scramble" tested input submission, timer countdown, multiple attempts and win/lose states.
 
 [Back to Top](#contents)
 

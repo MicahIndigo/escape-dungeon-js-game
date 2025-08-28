@@ -129,4 +129,21 @@
             }
         }, 1000);
     }
+
+    /**
+     * End the game, call appropriate callback
+     * @param {boolean} success
+     */
+    function endGame(success) {
+        clearInterval(timerInterval);
+        container.innerHTML = "";
+        if (success && typeof window.scrambleOnSuccess === "function") {
+            window.scrambleOnSuccess();
+        } else if (!success && typeof window.scrambleOnFail === "function") {
+            window.scrambleOnFail();
+        }
+    }
+
+    // Export start function
+    window.startScramble = startScramble;
 })();

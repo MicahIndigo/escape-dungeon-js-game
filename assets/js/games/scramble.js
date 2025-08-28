@@ -83,4 +83,12 @@
             .sort(() => Math.random() - 0.5)
             .join("");
     }
+
+    /**
+     * Pick a random word from the word bank
+     * @returns {string}
+     */
+    function getRandomWord() {
+        return wordBank[Math.floor(Math.random() * wordBank.length)];
+    }
 })();

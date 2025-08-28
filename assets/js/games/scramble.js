@@ -101,7 +101,7 @@
 
         if (!input) return;
 
-        if (input.toLowerCase() === currentWord.toLowerCase()) {
+        if (input.value.toLowerCase() === currentWord.toLowerCase()) {
             endGame(true);
         } else {
             attemptsLeft--;

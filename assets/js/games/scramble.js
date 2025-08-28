@@ -53,7 +53,7 @@
         const input = document.createElement("input");
         input.type = "text";
         input.id = "scrambleInput";
-        IDBOpenDBRequest.placeholder = "Your guess...";
+        input.placeholder = "Your guess...";
         container.appendChild(input);
 
         const button = document.createElement("button");
@@ -101,7 +101,7 @@
 
         if (!input) return;
 
-        if (input.ariaValueMax.toLowerCase() === currentWord.toLowerCase()) {
+        if (input.toLowerCase() === currentWord.toLowerCase()) {
             endGame(true);
         } else {
             attemptsLeft--;

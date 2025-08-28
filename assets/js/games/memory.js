@@ -1,5 +1,6 @@
 /* Memory Game implementation */
 (() => {
+  "use strict";
 
   /* Images array (pairs already included) */
   const memoryImages = ['🗝️', '❤️', '🔒', '🧩', '🗝️', '❤️', '🔒', '🧩'];

@@ -1,11 +1,12 @@
 /* Hangman Game Implementation */
 (() => {
+  "use strict";
     
     /* Word bank for hangman game */
-    const hangmanWords = ['torch', 'dungeon', 'glove', 'escape', 'riddle', 'symbols', 'puzzle', 'adventure', 'challenge'];
+    const hangmanWords = ["torch", "dungeon", "glove", "escape", "riddle", "symbol", "puzzle", "adventre", "challege"];
 
     /* Game state variables */
-    let selectedWord = ''; // The word to guess
+    let selectedWord = ""; // The word to guess
     let guessedLetters = []; // Letters guessed by the player
     const maxMistakes = 6; // Maximum number of incorrect guesses allowed
     let mistakes = 0; // Current number of incorrect guesses
@@ -48,7 +49,7 @@
       guessedLetters = [];
       mistakes = 0;
       hintUsed = false;
-      container.innerHTML = ''; // Clears the container before render.
+      container.innerHTML = ""; // Clears the container before render.
     }
 
     /**
@@ -77,10 +78,10 @@
      */
     function updateWordDisplay() {
       const display = selectedWord
-        .split('')
-        .map(letter => guessedLetters.includes(letter) ? letter : '_')
+        .split("")
+        .map(letter => guessedLetters.includes(letter) ? letter : "_")
         .join(' ');
-      document.getElementById('hangmanWordDisplay').textContent = display;
+      document.getElementById("hangmanWordDisplay").textContent = display;
     }
 
     /**
@@ -93,20 +94,20 @@
 
       // Validate input
       if (!/^[a-z]$/.test(guess)) {
-        setStatus('Enter a valid single letter.');
+        setStatus("Enter a valid single letter.");
         return;
       }
 
       // Prevent duplicate guesses
       if (guessedLetters.includes(guess)) {
-        setStatus('You already guessed that letter.');
+        setStatus("You already guessed that letter.");
         return;
       }
 
       // Process the guess
       guessedLetters.push(guess);
       if (selectedWord.includes(guess)) {
-        setStatus('Correct!');
+        setStatus("Correct!");
       } else {
         mistakes++;
         setStatus(`Incorrect! mistakes: ${mistakes}/${maxMistakes}`);
@@ -122,7 +123,7 @@
     */
     function showHint() {
       if (hintUsed) {
-        setStatus('You have already used your hint.');
+        setStatus("You have already used your hint.");
         return;
       }
 
@@ -209,7 +210,7 @@
   `
       ];
 
-      document.getElementById('hangmanVisual').textContent = stages[mistakes];
+      document.getElementById("hangmanVisual").textContent = stages[mistakes];
     }
 
     /**
@@ -217,19 +218,19 @@
      * @param {string} message - Text to display
      */
     function setStatus(message) {
-      document.getElementById('hangmanStatus').textContent = message;
+      document.getElementById("hangmanStatus").textContent = message;
     }
 
     /**
      * Checks if the game is won or lost and triggers puzzleResult accordingly.
      */
     function checkGameState() {
-      const isComplete = selectedWord.split('').every(letter => guessedLetters.includes(letter));
+      const isComplete = selectedWord.split("").every(letter => guessedLetters.includes(letter));
       if (isComplete) {
-        setStatus('Congratulations! You escaped this trap!');
+        setStatus("Congratulations! You escaped this trap!");
         setTimeout(() => puzzleResult(true), 1200);
       } else if (mistakes >= maxMistakes) {
-        setStatus('You failed to solve the puzzle.');
+        setStatus("You failed to solve the puzzle.");
         setTimeout(() => puzzleResult(false), 1200);
       }
     }
@@ -239,10 +240,10 @@
      * @param {boolean} success - Whether the puzzle is solved
      */
     function puzzleResult(success) {
-      container.innerHTML = '';
-      if (success && typeof window.hangmanOnSuccess === 'function') {
+      container.innerHTML = "";
+      if (success && typeof window.hangmanOnSuccess === "function") {
         window.hangmanOnSuccess();
-      } else if (!success && typeof window.hangmanOnFail === 'function') {
+      } else if (!success && typeof window.hangmanOnFail === "function") {
         window.hangmanOnFail();
       }
     }

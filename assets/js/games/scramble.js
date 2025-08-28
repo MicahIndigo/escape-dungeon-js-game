@@ -1,5 +1,7 @@
 /* Word Scramble Game Implementation */
 (() => {
+    "use strict";
+
     //  Game state
     let currentWord = "";
     let scrambledWord = "";

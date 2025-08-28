@@ -1,5 +1,6 @@
 /* Rock-Paper-Scissors Game Implementation */
 (() => {
+    "use strict";
     
     /* Private Game state (no global collision) */
     let playerScore = 0;
